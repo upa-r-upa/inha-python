@@ -5,7 +5,8 @@ from Penalty import Penalty
 # 웬만하면 모든 작업은 여기에서 이뤄질 수 있도록 함.
 class GameBase(metaclass=ABCMeta):
     def __init__(self, intimacy, recommendedPeopleRange, direction, description, name):
-        # 친밀도
+        # 친밀도 
+            # 0~N까지, 높을수록 친밀한 값
         intimacy = intimacy
         # 권장 인원
         recommendedPeopleRange = recommendedPeopleRange

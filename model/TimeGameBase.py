@@ -12,7 +12,7 @@ class TimeGameBase(GameBase):
         
         
     @abstractmethod
-    def end_time(self):
+    def _end_time(self):
         pass
     
     def _start_time(self):
@@ -26,3 +26,4 @@ class TimeGameBase(GameBase):
     
     def end_game(self):
         super().end_game()
+        self._end_time()
