@@ -5,6 +5,7 @@ static_penalty_list = [
     PenaltyCard('술 1잔 마시기'),
     PenaltyCard('술 2잔 마시기'),
     PenaltyCard('술 3잔 마시기'),
+    PenaltyCard('러브샷')
 ]
 
 
@@ -12,8 +13,8 @@ class Penalty:
     # 가급적 Convention 지킬 것.
     penalty_list = static_penalty_list
     
-    def __init__(intimacy):
-        __intimacy = intimacy
+    def __init__(self, intimacy):
+        self.__intimacy = intimacy
     
     def _get_filtered_penalty_list(self): 
         # [구현부] 친밀도에 따른 벌칙을 return 해야 함.

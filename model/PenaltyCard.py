@@ -1,11 +1,8 @@
 class PenaltyCard:
-    def __init__(name, img_src = '', intimacy = 0):
-        name = name
+    def __init__(self, name, img_src = '../images/beer-with-cup.png', intimacy = 0):
+        self.name = name
+        self.img_src = img_src
 
-        if img_src:
-            img_src = img_src
-        else:
-            img_src = '../images/beer-with-cup.png'
         
     
     

@@ -8,12 +8,13 @@ class TimeGameBase(GameBase):
     def __init__(self, intimacy, recommendedPeopleRange, direction, description, name, game_limit_time):
         super().__init__(intimacy, recommendedPeopleRange, direction, description, name)
         
-        game_limit_time = game_limit_time
+        self.game_limit_time = game_limit_time
+        self.timer = Timer(self.game_limit_time, self._end_time)
         
         
     @abstractmethod
     def _end_time(self):
-        pass
+        self.timer.start()
     
     def _start_time(self):
         pass
@@ -21,8 +22,6 @@ class TimeGameBase(GameBase):
     def start_game(self):
         super().start_game()
         
-        timer = Timer(self.game_limit_time, self.time_end)
-        timer.start()
     
     def end_game(self):
         super().end_game()
