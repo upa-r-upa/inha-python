@@ -7,32 +7,27 @@ class GameBase(metaclass=ABCMeta):
     def __init__(self, intimacy, recommendedPeopleRange, direction, description, name):
         # 친밀도 
             # 0~N까지, 높을수록 친밀한 값
-        intimacy = intimacy
+        self.intimacy = intimacy
         # 권장 인원
-        recommendedPeopleRange = recommendedPeopleRange
+        self.recommendedPeopleRange = recommendedPeopleRange
         # 방향
-        direction = direction
+        self.direction = direction
         
         # 설명
-        description = description
+        self.description = description
         # 게임 이름
-        name = name
+        self.name = name
         
     @abstractmethod
     def start_game(self):
         pass
     
-    @abstractmethod
     def end_game(self):
         pass
     
-    @abstractmethod
-    def play_penalty(self):
+    def play_random_penalty(self):
         penalty = Penalty()
     
         return penalty.play_random_penalty()
-    
-    @abstractmethod
-    def penalty_end(self):
-        pass
+
     
