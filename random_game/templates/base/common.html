@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}" />
+      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <title>술자리 랜덤 게임</title>
+    </head>
+  </head>
+  <body>
+    <div class="container-wrap">
+      <div class="container titl">
+        <div class="item">술자리 랜덤 게임</div>
+      </div>
+
+      <div class="main-content">{% block content %}{% endblock %}</div>
+
+      <div class="common-buttons-area">{%block buttons_area %}{% endblock %}</div>
+    </div>
+  </body>
+</html>

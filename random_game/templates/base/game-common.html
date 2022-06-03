@@ -1,0 +1,30 @@
+<html>
+  <header>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game-layout.css') }}" />
+    <py-script src="{{ url_for('static', filename='pyscript/main.py') }}"></py-script>
+  </header>
+  {% extends "/base/common.html" %} {% block content %}
+  <div class="content-container">
+    <!-- 게임 타이머 element 영역 시작 -->
+    <div class="timer-container">{% block timer_area %} {% endblock timer_area %}</div>
+    <!-- 게임 타이머 element 영역 끝 -->
+
+    <!-- 게임 설명 element 영역 시작 -->
+    <div class="description-container float-contents">{% block description_area %} {% endblock description_area %}</div>
+    <!-- 게임 설명 element 끝 -->
+
+    <!-- 게임 컨텐츠 element 영역 시작 -->
+    <div class="main-container">{% block main_game_area %} {% endblock main_game_area %}</div>
+    <!-- 게임 컨텐츠 element 영역 끝 -->
+
+    <!-- 벌칙 element 영역 시작 -->
+    <div class="penalty-container float-contents hidden-area">
+      {% block penalty_area %} {% endblock penalty_area %}
+      <!-- 벌칙 element 영역 끝 -->
+    </div>
+  </div>
+  {% endblock content %}
+
+  <!-- Button 영역 -->
+  {% block buttons_area %} {% endblock buttons_area %}
+</html>

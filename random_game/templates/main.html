@@ -1,0 +1,40 @@
+<html>
+  <header>
+    <py-script src="{{ url_for('static', filename='pyscript/main.py') }}"></py-script>
+  </header>
+  {% extends "/base/common.html" %} {% block content %}
+
+  <div class="" style="border: 1px solid blue">
+    <div style="border: 1px solid rgb(67, 144, 216)">
+      <!-- 인원수 선택 -->
+      <div class="container titl-sub">
+        <div class="item">인원수 선택</div>
+      </div>
+      <div class="container" style="justify-content: space-around">
+        <div id="people-range-minimum" class="item btn-num-pbl">1~2인</div>
+        <div id="people-range-middle" class="item btn-num-pbl">3~10인</div>
+        <div id="people-range-maximum" class="item btn-num-pbl">11인 이상</div>
+      </div>
+    </div>
+
+    <!-- 친밀도 선택 -->
+    <div style="border: 1px solid green">
+      <div class="container titl-sub">
+        <div class="item">친밀도 선택</div>
+      </div>
+      <div class="container" style="justify-content: space-evenly">
+        <div id="intimacy-low" class="item btn-them">서먹서먹..</div>
+        <div id="intimacy-high" class="item btn-them">짱친~</div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+
+  <!-- Button 영역 -->
+  {% block buttons_area %}
+  <div class="container titl-sub">
+    <div id="game-start" class="item btn-them">GAME START!</div>
+  </div>
+
+  {% endblock %}
+</html>
