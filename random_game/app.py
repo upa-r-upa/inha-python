@@ -1,6 +1,8 @@
 from flask import Flask, redirect, render_template, request
+from urllib.parse import urlencode
 
-from random_game.model.GameProvider import GameProvider
+from .static.model.game_provider import GameProvider
+from .static.model.game_data_set import game_data_set
 
 # main 실행 함수
 def create_app():
@@ -12,18 +14,7 @@ def create_app():
 
 app = create_app()
 
-
-def get_user_settings():
-    people_range = request.args.get("range_people")
-    intimacy = request.args.get("intimacy")
-
-    if people_range and intimacy:
-        return {"people_range": people_range, "intimacy": intimacy}
-    else:
-        return None
-
-
-__game_provider = GameProvider()
+__game_provider = GameProvider(game_data_set.values())
 
 
 @app.route("/")
@@ -33,18 +24,18 @@ def root():
 
 @app.route("/api/redirect-game")
 def redirect_random_game():
-    settings = get_user_settings()
+    people_min = int(request.args.get("people_min"))
+    people_max = int(request.args.get("people_max"))
+    intimacy = int(request.args.get("intimacy"))
     prev_game = request.args.get("prev_game")
 
-    print(settings)
-
-    if settings != None:
-        random_game = __game_provider.play_random_game(
+    if people_min and people_max and intimacy:
+        random_game = __game_provider.get_random_game(
+            people_range=[people_min, people_max],
+            intimacy=intimacy,
             prev_game=prev_game,
-            people_range=settings["people_range"],
-            intimacy=settings["intimacy"],
         )
-        return redirect("/" + random_game)
+        return redirect("/" + random_game["game_id"] + "?" + urlencode(request.args))
     else:
         return redirect("/")
 
@@ -54,13 +45,27 @@ def redirect_random_game():
 # 폭탄 돌리기 게임
 @app.route("/bomb-game")
 def render_bomb_game():
-    return "BOMB!"
+    game = game_data_set["bomb-game"]
+
+    return render_template(
+        "./game/bombGame.html",
+        game_title=game["name"],
+        game_description=game["description"],
+        game_image_url=game["main_image_url"],
+    )
 
 
 # 눈치 게임
 @app.route("/hunch-game")
 def render_hunch_game():
-    return "HUNCH!"
+    game = game_data_set["hunch-game"]
+
+    return render_template(
+        "./game/hunchGame.html",
+        game_title=game["name"],
+        game_description=game["description"],
+        game_image_url=game["main_image_url"],
+    )
 
 
 # 모듈로써 실행했을 때만 main 함수가 실행되도록 전처리

@@ -3,6 +3,27 @@
   position: relative;
 }
 
+/* 게임 설명 컨텐츠와 벌칙 컨텐츠는 게임 컨텐츠 위로 float 되어야 하기 때문에 공통적인 CSS로 처리한다. */
+.float-contents {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border: 1px solid black;
+}
+
+/* 
+    게임 설명 컨텐츠의 경우 유저가 닫으면 보이지 않아야 하고,
+    벌칙 컨텐츠의 경우 벌칙 버튼을 누르기 전까진 보이지 않아야 하기 때문에
+    해당 CSS로 공통적인 처리를 진행한다.    
+*/
+.hidden-area {
+  display: none;
+}
+
 /* Timer container class name */
 .timer-container {
   width: 100%;
@@ -21,20 +42,31 @@
 /* 게임의 벌칙 컨텐츠를 그리는 class name. */
 .penalty-container {
   width: 100%;
+  z-index: 5;
 }
 
-/* 게임 설명 컨텐츠와 벌칙 컨텐츠는 게임 컨텐츠 위로 float 되어야 하기 때문에 공통적인 CSS로 처리한다. */
-.float-contents {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* 아래에서부턴 테스트용 CSS */
+
+.description-container {
+  background-color: bisque;
 }
 
-/* 
-    게임 설명 컨텐츠의 경우 유저가 닫으면 보이지 않아야 하고,
-    벌칙 컨텐츠의 경우 벌칙 버튼을 누르기 전까진 보이지 않아야 하기 때문에
-    해당 CSS로 공통적인 처리를 진행한다.    
-*/
-.hidden-area {
-  display: none;
+.penalty-container {
+  background-color: cornflowerblue;
+}
+
+.main-container {
+  background-color: cadetblue;
+}
+
+.main-container {
+  min-height: 90vh;
+}
+
+#game-description-close {
+  border: 1px solid blue;
+  height: max-content;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
 }

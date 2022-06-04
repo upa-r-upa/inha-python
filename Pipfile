@@ -7,6 +7,9 @@ name = "pypi"
 python-dotenv = "*"
 flask = "*"
 jinja2 = "*"
+javascript = "*"
+js = "*"
+apscheduler = "*"
 
 [dev-packages]
 

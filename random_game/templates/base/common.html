@@ -7,6 +7,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}" />
       <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <!-- prettier-ignore -->
+      <py-env>
+        - apscheduler
+        - paths:
+          - .{{ url_for('static', filename='pyscript/utils.py') }}
+      </py-env>
+
       <title>술자리 랜덤 게임</title>
     </head>
   </head>
@@ -18,7 +25,7 @@
 
       <div class="main-content">{% block content %}{% endblock %}</div>
 
-      <div class="common-buttons-area">{%block buttons_area %}{% endblock %}</div>
+      <div class="container" style="justify-content: space-evenly">{%block buttons_area %}{% endblock %}</div>
     </div>
   </body>
 </html>

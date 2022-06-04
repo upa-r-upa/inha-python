@@ -41,12 +41,19 @@ body {
   flex-basis: 30%;
   padding: 3px;
 }
+.btn-num-pbl.selected {
+  background-color: cadetblue;
+}
 
 .btn-them {
   background-color: antiquewhite;
   flex-basis: 40%;
   height: 50%;
   font-size: 18px;
+}
+
+.btn-them.selected {
+  background-color: cadetblue;
 }
 
 .them,
