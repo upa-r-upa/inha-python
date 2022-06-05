@@ -3,7 +3,7 @@ from utils import UIUtils
 
 class TimerViewController:
     def __init__(self, element):
-        self.__ui_utils = UIUtils()
+        self._ui_utils = UIUtils()
         self.Element = element
 
     def time_format(self, second):
@@ -24,8 +24,8 @@ class TimerViewController:
     def timer_bomb(self):
         notice_container = self.Element("game-end-notice-container")
         container = self.Element("bomb-image")
-        self.__ui_utils.view_toggle(notice_container, True)
-        self.__ui_utils.view_toggle(container, True)
+        self._ui_utils.view_toggle(notice_container, True)
+        self._ui_utils.view_toggle(container, True)
 
     def timer_update(self, time, remaining_time):
         rest_time_element = self.Element("rest-time")
@@ -33,4 +33,4 @@ class TimerViewController:
 
     def element_initializing(self):
         container = self.Element("timer-container")
-        self.__ui_utils.view_toggle(container, True)
+        self._ui_utils.view_toggle(container, True)

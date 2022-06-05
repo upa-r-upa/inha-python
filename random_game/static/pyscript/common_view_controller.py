@@ -5,8 +5,8 @@ from utils import UIUtils
 
 class CommonGameViewController:
     def __init__(self, model, Element):
-        self.__game_model = model
-        self.__ui_utils = UIUtils()
+        self._game_model = model
+        self._ui_utils = UIUtils()
 
         self.Element = Element
 
@@ -16,7 +16,7 @@ class CommonGameViewController:
 
         params_dict = dict(parse_qsl(parsed_url.query))
 
-        params_dict["prev_game"] = self.__game_model.game_id
+        params_dict["prev_game"] = self._game_model.game_id
 
         hidden_move_a_tag.element.href = "/api/redirect-game?" + unquote(
             urlencode(params_dict)
@@ -30,7 +30,7 @@ class CommonGameViewController:
         img_element = penalty_container.select("img")
         title_element = penalty_container.select("p")
 
-        random_penalty_card = self.__game_model.play_random_penalty()
+        random_penalty_card = self._game_model.play_random_penalty()
 
         title_element.element.innerText = random_penalty_card.name
         img_element.element.src = "/static/" + random_penalty_card.img_src
@@ -39,7 +39,7 @@ class CommonGameViewController:
         description_container = self.Element("description-container")
         description_container.element.classList.add("hidden-area")
 
-        self.__game_model.start_game()
+        self._game_model.start_game()
 
     def element_initializing(self, *, direction_show=False):
         next_game_button = self.Element("next-game-button")
@@ -55,7 +55,7 @@ class CommonGameViewController:
             direction_img = direction_container.select("img")
             direction_label = self.Element("direction-label")
 
-            self.__ui_utils.view_toggle(direction_container, True)
+            self._ui_utils.view_toggle(direction_container, True)
 
-            direction_img.element.src = "/static/" + self.__game_model.direction.img_url
-            direction_label.write(self.__game_model.direction.label)
+            direction_img.element.src = "/static/" + self._game_model.direction.img_url
+            direction_label.write(self._game_model.direction.label)
