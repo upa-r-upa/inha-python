@@ -1,0 +1,18 @@
+<html>
+  <header>
+    <!-- prettier-ignore -->
+    <py-env>
+      - paths:
+        - .{{ url_for('static', filename='model/game/korean_game.py') }}
+    </py-env>
+    <py-script src="{{ url_for('static', filename='pyscript/view-controller/korean.py') }}"></py-script>
+  </header>
+
+  {% extends "base/gameCommon.html" %}
+
+  <!-- 게임 컨텐츠 element 영역 시작 -->
+  {% block main_game_area %}
+  <div class="game-area-title">훈민정음 게임 시작!</div>
+  {% endblock main_game_area %}
+  <!-- 게임 컨텐츠 element 영역 끝 -->
+</html>

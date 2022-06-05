@@ -3,7 +3,7 @@ class PenaltyCard:
         self,
         name,
         intimacy=0,
-        img_src="images/penalty/beer-with-cup.png",
+        img_src="/static/images/penalty/beer-with-cup.png",
     ):
         self.intimacy = intimacy
         self.name = name

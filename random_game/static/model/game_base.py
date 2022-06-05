@@ -6,8 +6,8 @@ from game_data_set import game_data_set
 from image_card import ImageCard
 
 static_direction_list = [
-    ImageCard(label="시계 방향으로 진행하기", img_url="images/common/direction-left.png"),
-    ImageCard(label="반시계 방향으로 진행하기", img_url="images/common/direction-right.png"),
+    ImageCard(label="시계 방향으로 진행하기", img_url="common/direction-left.png"),
+    ImageCard(label="반시계 방향으로 진행하기", img_url="common/direction-right.png"),
 ]
 
 

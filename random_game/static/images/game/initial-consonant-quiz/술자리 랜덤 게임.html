@@ -1,0 +1,126 @@
+<html>
+  <header>
+    <!-- prettier-ignore -->
+    <py-env>
+      - paths:
+        - ./static/model/game/image_game.py
+    </py-env>
+    <py-script src="/static/pyscript/view-controller/image.py"></py-script>
+  </header>
+
+  <html>
+  <header>
+    <link rel="stylesheet" href="/static/css/game-layout.css" />
+    <!-- prettier-ignore -->
+    <py-env>
+      - paths:
+        - ./static/pyscript/utils.py
+        - ./static/model/game_data_set.py
+        - ./static/model/penalty_card.py
+        - ./static/model/penalty.py
+        - ./static/model/game_base.py
+        - ./static/model/time_game_base.py
+        - ./static/model/game_provider.py
+        - ./static/model/image_card.py
+        - ./static/pyscript/common_view_controller.py
+        - ./static/pyscript/timer_view_controller.py
+    </py-env>
+  </header>
+  <!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="/static/css/layout.css" />
+      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <!-- prettier-ignore -->
+      <py-env>
+        - paths:
+          - ./static/pyscript/utils.py
+          - ./static/model/timer.py
+      </py-env>
+
+      <title>술자리 랜덤 게임</title>
+    </head>
+  </head>
+  <body>
+    <div id="bg-color">
+      <div class="bg-top"></div>
+      <div class="bg-bottom"></div>
+    </div>
+
+    <div class="container-wrap">
+      <div class="container titl">
+        <div class="item">
+          <a href="/">
+            <img src="../../static/images/penalty/one-beer.png">
+            술자리 랜덤 게임
+          </a>
+        </div>
+      </div>
+
+      <div class="main-content">
+
+  <a id="hidden-move-a" class="hidden-area" href=""></a>
+
+  <div id="game-title">이미지 게임</div>
+
+  <div class="content-container">
+    <!-- 게임 타이머 element 영역 끝 -->
+
+    <!-- 게임 설명 element 영역 시작 -->
+    <div id="description-container" class="description-container float-contents">
+      <div class="game-description">게임 설명!</div>
+      <img src="/static/images/game/image-game/main-image.png" alt="게임 메인 이미지" />
+      <div id="game-description">화면에 주어진 이미지와 가장 비슷한 사람을 지목해주세요! 지목 당한 사람이 벌칙 당첨!</div>
+
+      <button id="game-description-close">설명 닫기</button>
+    </div>
+    <!-- 게임 설명 element 끝 -->
+
+    <!-- 게임 컨텐츠 element 영역 시작 -->
+    <div class="main-container">
+      <div id="timer-container" class="timer-container hidden-area">
+        <img src="/static/images/common/bomb-before.jpg" />
+        <div id="rest-time"></div>
+      </div>
+
+      <div id="direction-container" class="hidden-area">
+        <img class="main-img" id="direction-image" />
+        <div id="direction-label"></div>
+      </div>
+      
+  <div class="game-area-title" id="match-keyword-title"></div>
+  <div>지목하기!</div>
+  
+    </div>
+    <!-- 게임 컨텐츠 element 영역 끝 -->
+
+    <!-- 게임 종료 알림 영역 시작 -->
+    <div id="game-end-notice-container" class="game-end-notice float-contents hidden-area">
+      <img id="bomb-image" class="hidden-area" src="/static/images/common/bomb-after.jpg" />
+      게임 종료!
+    </div>
+    <!-- 게임 종료 알림 영역 끝 -->
+
+    <!-- 벌칙 element 영역 시작 -->
+    <div id="penalty-container" class="penalty-container float-contents hidden-area">
+      <div class="random-penalty-title">랜덤 벌칙!</div>
+      <p id="penalty-title"></p>
+      <img class="penalty-image" id="penalty-image" />
+      <!-- 벌칙 element 영역 끝 -->
+    </div>
+  </div>
+  </div>
+
+      <div class="container" style="justify-content: space-evenly">
+
+  <button class="item btn-them" id="next-game-button">다음 게임</button>
+  <button class="item btn-them" id="extra-penalty-button">벌칙 실행</button>
+  </div>
+    </div>
+  </body>
+</html>

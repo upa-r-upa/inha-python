@@ -3,14 +3,16 @@ from penalty_card import PenaltyCard
 
 static_penalty_list = [
     # 예시 벌칙 리스트, 이미지와 함께 함.
-    PenaltyCard(name="소주 원샷!", img_src="images/penalty/soju-cup.png"),
-    PenaltyCard(name="맥주 원샷!", img_src="images/penalty/one-beer.png"),
-    PenaltyCard(name="소맥 원샷!", img_src="images/penalty/beer-with-cup.png"),
-    PenaltyCard(name="벌칙 PASS!", img_src="images/penalty/pass.png"),
+    PenaltyCard(name="소주 원샷!", img_src="static/images/penalty/soju-cup.png"),
+    PenaltyCard(name="맥주 원샷!", img_src="static/images/penalty/one-beer.png"),
+    PenaltyCard(name="소맥 원샷!", img_src="static/images/penalty/beer-with-cup.png"),
+    PenaltyCard(name="벌칙 PASS!", img_src="static/images/penalty/pass.png"),
     PenaltyCard(
-        name="술 한잔 원샷, 흑기사 찬스!", intimacy=1, img_src="images/penalty/highfive.png"
+        name="술 한잔 원샷, 흑기사 찬스!",
+        intimacy=1,
+        img_src="static/images/penalty/highfive.png",
     ),
-    PenaltyCard(name="러브샷!", intimacy=1, img_src="images/penalty/love.png"),
+    PenaltyCard(name="러브샷!", intimacy=1, img_src="static/images/penalty/love.png"),
 ]
 
 

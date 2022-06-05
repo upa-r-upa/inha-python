@@ -33,7 +33,7 @@ class CommonGameViewController:
         random_penalty_card = self._game_model.play_random_penalty()
 
         title_element.element.innerText = random_penalty_card.name
-        img_element.element.src = "/static/" + random_penalty_card.img_src
+        img_element.element.src = random_penalty_card.img_src
 
     def close_description(self, *args):
         description_container = self.Element("description-container")
@@ -57,5 +57,5 @@ class CommonGameViewController:
 
             self._ui_utils.view_toggle(direction_container, True)
 
-            direction_img.element.src = "/static/" + self._game_model.direction.img_url
+            direction_img.element.src = self._game_model.direction.img_url
             direction_label.write(self._game_model.direction.label)

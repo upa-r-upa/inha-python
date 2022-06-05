@@ -48,7 +48,7 @@ def render_template_boilerplate(args, html_link, game_id):
     else:
         game = game_data_set[game_id]
         return render_template(
-            html_link,
+            f"./game/{html_link}",
             game_title=game["name"],
             game_description=game["description"],
             game_image_url=game["main_image_url"],
@@ -65,36 +65,30 @@ def redirect_random_game():
             people_range=[user_settings["people_min"], user_settings["people_max"]],
             prev_game=prev_game,
         )
-        return redirect("/" + random_game["game_id"] + "?" + urlencode(request.args))
+        return redirect(
+            "/game?game_id=" + random_game["game_id"] + "&" + urlencode(request.args)
+        )
     else:
         return redirect("/")
 
 
 # 아래에서부터는 각 게임별 route로 연결
 
-# 폭탄 돌리기 게임
-@app.route("/bomb-game")
-def render_bomb_game():
-    return render_template_boilerplate(
-        args=request.args, html_link="./game/bombGame.html", game_id="bomb-game"
-    )
 
+@app.route("/game")
+def render_game():
+    args = request.args
 
-# 눈치 게임
-@app.route("/hunch-game")
-def render_hunch_game():
-    return render_template_boilerplate(
-        args=request.args, html_link="./game/hunchGame.html", game_id="hunch-game"
-    )
+    try:
+        game = game_data_set[args["game_id"]]
 
+    except KeyError:
+        return redirect("/")
 
-# 초성 게임
-@app.route("/initial-consonant-quiz")
-def render_initial_consonant_quiz():
     return render_template_boilerplate(
         args=request.args,
-        html_link="./game/initialConsonantQuiz.html",
-        game_id="initial-consonant-quiz",
+        html_link=game["html_link"],
+        game_id=game["game_id"],
     )
 
 

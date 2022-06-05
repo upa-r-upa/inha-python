@@ -1,0 +1,21 @@
+<html>
+  <header>
+    <!-- prettier-ignore -->
+    <py-env>
+      - paths:
+        - .{{ url_for('static', filename='model/game/balance_game.py') }}
+    </py-env>
+    <py-script src="{{ url_for('static', filename='pyscript/view-controller/balance.py') }}"></py-script>
+  </header>
+
+  {% extends "base/gameCommon.html" %}
+
+  <!-- 게임 컨텐츠 element 영역 시작 -->
+  {% block main_game_area %}
+  <div id="match-keyword-title-1"></div>
+  <p>VS</p>
+  <div id="match-keyword-title-2"></div>
+  <div>거수하기!</div>
+  {% endblock main_game_area %}
+  <!-- 게임 컨텐츠 element 영역 끝 -->
+</html>
