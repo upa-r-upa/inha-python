@@ -1,5 +1,7 @@
 import random
+from urllib.parse import urlparse, parse_qsl
 from penalty import Penalty
+from js import window
 from game_data_set import game_data_set
 
 static_direction_list = ["시계 방향으로", "시계 반대 방향으로"]
@@ -15,8 +17,6 @@ class GameBase:
 
         # 게임의 unique id, route로 사용
         self.game_id = game_id
-        # 친밀도. 0~N까지, 높을수록 친밀한 값
-        self.intimacy = game_set["intimacy"]
         # 권장 인원
         self.recommended_people_range = game_set["recommended_people_range"]
         # 방향
@@ -29,7 +29,12 @@ class GameBase:
         # 게임 이름
         self.name = game_set["name"]
 
-        self.__penalty = Penalty(self.intimacy)
+        parsed_url = urlparse(window.location.href)
+        params_dict = dict(parse_qsl(parsed_url.query))
+
+        intimacy = int(params_dict["intimacy"])
+
+        self.__penalty = Penalty(intimacy)
 
     def start_game(self):
         pass
