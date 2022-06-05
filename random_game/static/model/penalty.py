@@ -7,7 +7,9 @@ static_penalty_list = [
     PenaltyCard(name="맥주 원샷!", img_src="images/penalty/one-beer.png"),
     PenaltyCard(name="소맥 원샷!", img_src="images/penalty/beer-with-cup.png"),
     PenaltyCard(name="벌칙 PASS!", img_src="images/penalty/pass.png"),
-    PenaltyCard(name="흑기사!", intimacy=1, img_src="images/penalty/highfive.png"),
+    PenaltyCard(
+        name="술 한잔 원샷, 흑기사 찬스!", intimacy=1, img_src="images/penalty/highfive.png"
+    ),
     PenaltyCard(name="러브샷!", intimacy=1, img_src="images/penalty/love.png"),
 ]
 
