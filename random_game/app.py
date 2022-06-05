@@ -29,7 +29,7 @@ def redirect_random_game():
     intimacy = int(request.args.get("intimacy"))
     prev_game = request.args.get("prev_game")
 
-    if people_min and people_max and intimacy:
+    if people_min and people_max and intimacy is not None:
         random_game = __game_provider.get_random_game(
             people_range=[people_min, people_max],
             intimacy=intimacy,
