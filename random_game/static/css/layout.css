@@ -10,21 +10,29 @@ body {
 }
 
 #bg-color {
-  position: fixed; z-index: 100; width: 100%; height: 100vh; background: #ffffff;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
 }
 
 .bg-top {
-  background: #053F5C; height: 40%; border-bottom-right-radius: 154px;
+  background: #053f5c;
+  height: 40%;
+  border-bottom-right-radius: 154px;
 }
 
 .bg-bottom {
-  background: #ffffff; height: 60%;
+  background: #ffffff;
+  height: 60%;
 }
 
 .container-wrap {
   height: 100vh;
   padding: 20px;
-  position: relative; z-index: 999;
+  position: relative;
+  z-index: 5;
 }
 .container {
   display: flex;
@@ -36,26 +44,31 @@ body {
 }
 
 .item-sub {
-  font-family: 'GmarketSansBold';
+  font-family: "GmarketSansBold";
 }
 
 .titl {
   justify-content: center;
   font-size: 25px;
   margin-bottom: 20px;
-  font-family: 'ROKAFSansBold';
+  font-family: "ROKAFSansBold";
 }
 
 .titl div {
-  background-color: #f9f9f9; border-radius: 30px; padding: 10px 20px;
+  background-color: #f9f9f9;
+  border-radius: 30px;
+  padding: 10px 20px;
 }
 
 .titl img {
-  width: 40px; display: inline-block;
+  width: 40px;
+  display: inline-block;
 }
 
 .main-img {
-  width: 180px; margin: 0 auto; margin-bottom: 20px;
+  width: 180px;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .titl-sub {
@@ -65,7 +78,8 @@ body {
 }
 
 .btn-people {
-  justify-content: space-around; margin-bottom: 20px;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
 .btn-num-pbl {
@@ -73,20 +87,19 @@ body {
   font-size: 18px;
   flex-basis: 30%;
   padding: 3px;
-  border: 1px solid #D7DBDA;
+  border: 1px solid #d7dbda;
   border-radius: 20px;
   opacity: 0.6;
-  font-family: 'MinSans-Medium';
-
+  font-family: "MinSans-Medium";
 }
 
 .btn-num-pbl.selected {
-  border: 3px solid #FDB137;
+  border: 3px solid #fdb137;
   opacity: 1;
 }
 
 .btn-them {
-  border: 1px solid #D7DBDA;
+  border: 1px solid #d7dbda;
   border-radius: 20px;
 
   background-color: ffffff;
@@ -95,12 +108,11 @@ body {
   font-size: 18px;
   padding: 3px;
   opacity: 0.6;
-  font-family: 'MinSans-Medium';
-
+  font-family: "MinSans-Medium";
 }
 
 .btn-them.selected {
-  border: 3px solid #FDB137;
+  border: 3px solid #fdb137;
   opacity: 1;
 }
 
@@ -148,6 +160,11 @@ button {
 }
 
 .btn-start {
-  font-family: 'ROKAFSansBold';
-  margin-top: 30px; background: #FDB137;font-size: 20px; color: #ffffff; padding: 10px 20px; border-radius: 30px;
+  font-family: "ROKAFSansBold";
+  margin-top: 30px;
+  background: #fdb137;
+  font-size: 20px;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 30px;
 }
