@@ -6,12 +6,14 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}" />
+      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
       <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
       <!-- prettier-ignore -->
       <py-env>
         - apscheduler
         - paths:
           - .{{ url_for('static', filename='pyscript/utils.py') }}
+          - .{{ url_for('static', filename='model/timer.py') }}
       </py-env>
 
       <title>술자리 랜덤 게임</title>
@@ -20,7 +22,7 @@
   <body>
     <div class="container-wrap">
       <div class="container titl">
-        <div class="item">술자리 랜덤 게임</div>
+        <div class="item"><a href="/">술자리 랜덤 게임</a></div>
       </div>
 
       <div class="main-content">{% block content %}{% endblock %}</div>

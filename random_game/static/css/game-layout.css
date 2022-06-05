@@ -1,6 +1,9 @@
 /* 게임 컨텐츠 내부에서 보여질 element의 부모 역할. */
 .content-container {
   position: relative;
+  max-height: calc(100vh - 200px);
+  height: 100%;
+  margin-bottom: 20px;
 }
 
 /* 게임 설명 컨텐츠와 벌칙 컨텐츠는 게임 컨텐츠 위로 float 되어야 하기 때문에 공통적인 CSS로 처리한다. */
@@ -13,6 +16,7 @@
   height: 100%;
   background-color: white;
   border: 1px solid black;
+  overflow: auto;
 }
 
 /* 
@@ -47,20 +51,57 @@
 
 /* 아래에서부턴 테스트용 CSS */
 
-.description-container {
-  background-color: bisque;
+#game-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.description-container,
+.game-end-notice,
+.penalty-container {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 5px 5px gray;
+  padding: 5px;
+  height: 100%;
+  text-align: center;
+}
+
+.game-description,
+.random-penalty-title {
+  text-align: center;
+  margin: 10px auto;
+  font-size: 15px;
+  font-weight: bold;
+}
+.description-container img {
+  max-width: 100%;
+  height: 50px;
+  margin: 10px auto;
+}
+
+.penalty-container img {
+  height: 50%;
+  margin: 10px auto;
+}
+
+.timer-container img,
+.game-end-notice img {
+  height: 30vh;
+  margin: 5px auto;
+  max-width: 100%;
 }
 
 .penalty-container {
-  background-color: cornflowerblue;
+  background-color: white;
 }
 
 .main-container {
-  background-color: cadetblue;
+  background-color: beige;
 }
 
 .main-container {
-  min-height: 90vh;
+  height: 100%;
 }
 
 #game-description-close {

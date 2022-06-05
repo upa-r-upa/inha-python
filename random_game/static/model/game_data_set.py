@@ -15,4 +15,12 @@ game_data_set = {
         "name": "눈치게임",
         "main_image_url": "images/game/hunch-game/main-image.png",
     },
+    "initial-consonant-quiz": {
+        "game_id": "initial-consonant-quiz",
+        "recommended_people_range": [1, 50],
+        "intimacy": 0,
+        "description": "화면에 제시된 초성을 이용하여 단어를 조합하세요! 가장 늦게 조합한 사람이 벌칙 당첨 !",
+        "name": "초성퀴즈",
+        "main_image_url": "images/game/initial-consonant-quiz/main-image.png",
+    },
 }

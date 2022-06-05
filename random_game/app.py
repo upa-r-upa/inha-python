@@ -68,6 +68,19 @@ def render_hunch_game():
     )
 
 
+# 눈치 게임
+@app.route("/initial-consonant-quiz")
+def render_initial_consonant_quiz():
+    game = game_data_set["initial-consonant-quiz"]
+
+    return render_template(
+        "./game/initialConsonantQuiz.html",
+        game_title=game["name"],
+        game_description=game["description"],
+        game_image_url=game["main_image_url"],
+    )
+
+
 # 모듈로써 실행했을 때만 main 함수가 실행되도록 전처리
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="8000")

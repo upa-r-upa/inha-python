@@ -7,7 +7,7 @@ class CommonGameViewController:
         self.__game_model = model
         self.Element = Element
 
-    def next_game_start(self, *args, **kwargs):
+    def next_game_start(self, *args):
         hidden_move_a_tag = self.Element("hidden-move-a")
         parsed_url = urlparse(window.location.href)
 
@@ -20,7 +20,7 @@ class CommonGameViewController:
         )
         hidden_move_a_tag.element.click()
 
-    def penalty_start(self, *args, **kwargs):
+    def penalty_start(self, *args):
         penalty_container = self.Element("penalty-container")
         penalty_container.element.classList.remove("hidden-area")
 
@@ -32,7 +32,7 @@ class CommonGameViewController:
         title_element.element.innerText = random_penalty_card.name
         img_element.element.src = "/static/" + random_penalty_card.img_src
 
-    def close_description(self, *args, **kwargs):
+    def close_description(self, *args):
         description_container = self.Element("description-container")
         description_container.element.classList.add("hidden-area")
 

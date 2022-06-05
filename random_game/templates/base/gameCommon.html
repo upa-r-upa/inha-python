@@ -12,6 +12,7 @@
         - .{{ url_for('static', filename='model/time_game_base.py') }}
         - .{{ url_for('static', filename='model/game_provider.py') }}
         - .{{ url_for('static', filename='pyscript/common_view_controller.py') }}
+        - .{{ url_for('static', filename='pyscript/timer_view_controller.py') }}
     </py-env>
   </header>
   {% extends "/base/common.html" %} {% block content %}
@@ -21,36 +22,41 @@
   <div id="game-title">{{ game_title }}</div>
 
   <div class="content-container">
-    <div class="timer-container hidden-area">
-      <img id="bomb-image" src="{{ url_for('static', filename='images/common/bomb-after.jpg') }}" />
-      <div id="rest-time"></div>
-    </div>
-
     <!-- 게임 타이머 element 영역 끝 -->
 
     <!-- 게임 설명 element 영역 시작 -->
     <div id="description-container" class="description-container float-contents">
-      <div>게임 설명!</div>
-
-      <div id="game-description">{{ game_description }}</div>
+      <div class="game-description">게임 설명!</div>
       <img src="{{ url_for('static', filename=game_image_url) }}" alt="게임 메인 이미지" />
+      <div id="game-description">{{ game_description }}</div>
 
       <button id="game-description-close">설명 닫기</button>
     </div>
     <!-- 게임 설명 element 끝 -->
 
     <!-- 게임 컨텐츠 element 영역 시작 -->
-    <div class="main-container">게임 시작! {% block main_game_area %} {% endblock main_game_area %}</div>
+    <div class="main-container">
+      게임 시작!
+      <div id="timer-container" class="timer-container hidden-area">
+        <img src="{{ url_for('static', filename='images/common/bomb-before.jpg') }}" />
+        <div id="rest-time"></div>
+      </div>
+      {% block main_game_area %} {% endblock main_game_area %}
+    </div>
     <!-- 게임 컨텐츠 element 영역 끝 -->
 
     <!-- 게임 종료 알림 영역 시작 -->
-    <div id="game-end-notice-container" class="game-end-notice float-contents hidden-area">게임 종료!</div>
+    <div id="game-end-notice-container" class="game-end-notice float-contents hidden-area">
+      <img id="bomb-image" class="hidden-area" src="{{ url_for('static', filename='images/common/bomb-after.jpg') }}" />
+      게임 종료!
+    </div>
     <!-- 게임 종료 알림 영역 끝 -->
 
     <!-- 벌칙 element 영역 시작 -->
     <div id="penalty-container" class="penalty-container float-contents hidden-area">
-      <img class="penalty-image" id="penalty-image" />
+      <div class="random-penalty-title">랜덤 벌칙!</div>
       <p id="penalty-title"></p>
+      <img class="penalty-image" id="penalty-image" />
       <!-- 벌칙 element 영역 끝 -->
     </div>
   </div>
