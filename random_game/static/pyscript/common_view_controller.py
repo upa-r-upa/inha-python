@@ -1,10 +1,13 @@
 from urllib.parse import urlparse, parse_qsl, unquote, urlencode
 from js import window
+from utils import UIUtils
 
 
 class CommonGameViewController:
     def __init__(self, model, Element):
         self.__game_model = model
+        self.__ui_utils = UIUtils()
+
         self.Element = Element
 
     def next_game_start(self, *args):
@@ -38,7 +41,7 @@ class CommonGameViewController:
 
         self.__game_model.start_game()
 
-    def handler_emit(self):
+    def element_initializing(self, *, direction_show=False):
         next_game_button = self.Element("next-game-button")
         penalty_play_button = self.Element("extra-penalty-button")
         description_close_button = self.Element("game-description-close")
@@ -46,3 +49,13 @@ class CommonGameViewController:
         description_close_button.element.onclick = self.close_description
         next_game_button.element.onclick = self.next_game_start
         penalty_play_button.element.onclick = self.penalty_start
+
+        if direction_show:
+            direction_container = self.Element("direction-container")
+            direction_img = direction_container.select("img")
+            direction_label = self.Element("direction-label")
+
+            self.__ui_utils.view_toggle(direction_container, True)
+
+            direction_img.element.src = "/static/" + self.__game_model.direction.img_url
+            direction_label.write(self.__game_model.direction.label)

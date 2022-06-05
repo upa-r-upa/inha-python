@@ -11,6 +11,7 @@
         - .{{ url_for('static', filename='model/game_base.py') }}
         - .{{ url_for('static', filename='model/time_game_base.py') }}
         - .{{ url_for('static', filename='model/game_provider.py') }}
+        - .{{ url_for('static', filename='model/image_card.py') }}
         - .{{ url_for('static', filename='pyscript/common_view_controller.py') }}
         - .{{ url_for('static', filename='pyscript/timer_view_controller.py') }}
     </py-env>
@@ -39,6 +40,11 @@
       <div id="timer-container" class="timer-container hidden-area">
         <img src="{{ url_for('static', filename='images/common/bomb-before.jpg') }}" />
         <div id="rest-time"></div>
+      </div>
+
+      <div id="direction-container" class="hidden-area">
+        <img class="main-img" id="direction-image" />
+        <div id="direction-label"></div>
       </div>
       {% block main_game_area %} {% endblock main_game_area %}
     </div>

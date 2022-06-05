@@ -4,4 +4,4 @@ from hunch_game import HunchGame
 game_instance = HunchGame()
 controller = CommonGameViewController(game_instance, Element)
 
-controller.handler_emit()
+controller.element_initializing()
