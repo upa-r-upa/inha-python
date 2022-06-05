@@ -9,7 +9,6 @@ flask = "*"
 jinja2 = "*"
 javascript = "*"
 js = "*"
-apscheduler = "*"
 
 [dev-packages]
 
