@@ -20,46 +20,56 @@
 
   <a id="hidden-move-a" class="hidden-area" href=""></a>
 
-  <div id="game-title">{{ game_title }}</div>
-
   <div class="content-container">
     <!-- 게임 타이머 element 영역 끝 -->
 
     <!-- 게임 설명 element 영역 시작 -->
-    <div id="description-container" class="description-container float-contents">
-      <div class="game-description">게임 설명!</div>
-      <img src="{{ url_for('static', filename=game_image_url) }}" alt="게임 메인 이미지" />
-      <div id="game-description">{{ game_description }}</div>
+    <div id="description-container" class="description-container float-contents" style="">
+      <div id="game-title" style="">
+        <img src="{{ url_for('static', filename=game_image_url) }}" alt="게임 메인 이미지" style="width: 90px; height: auto;" />
+        <span class="highlight">{{ game_title }}</span>
+      </div>
 
-      <button id="game-description-close">설명 닫기</button>
+      <div class="game-description game-description-font"><span>게임 설명!</span></div>
+      
+      <div id="game-description " class="nanumbarungothic game-des">{{ game_description }}</div>
+
+      <button id="game-description-close" class="btn-them">게임 시작!</button>
     </div>
     <!-- 게임 설명 element 끝 -->
 
     <!-- 게임 컨텐츠 element 영역 시작 -->
-    <div class="main-container">
+    <div class="main-container" style="border-radius: 50px; padding: 20px;">
+      <div id="game-title" style="">
+        <img src="{{ url_for('static', filename=game_image_url) }}" alt="게임 메인 이미지" style="width: 50px; height: auto;  margin: 0 auto;" />
+        <span class="highlight">{{ game_title }}</span>
+      </div>
+      
       <div id="timer-container" class="timer-container hidden-area">
-        <img src="{{ url_for('static', filename='images/common/bomb-before.jpg') }}" />
-        <div id="rest-time"></div>
+        <img src="{{ url_for('static', filename='images/common/bomb-before.jpg') }}" style="width: 110px; height: auto;" />
+        <div id="rest-time" style="font-size: 15px; text-align: center;"></div>
       </div>
 
-      <div id="direction-container" class="hidden-area">
-        <img class="main-img" id="direction-image" />
-        <div id="direction-label"></div>
-      </div>
+      
       {% block main_game_area %} {% endblock main_game_area %}
+      <div id="direction-container" class="hidden-area" style="text-align: center; margin-bottom: 10px; margin-top: 20px;">
+        <img class="main-img" id="direction-image" style="margin-bottom: 0px; width: 50px; border-radius: 50%; display: inline-block;" />
+        <div id="direction-label" style="font-family: 'MinSans-Medium'; font-size: 18px; padding: 5px 10px; margin-bottom: 10px; text-align: center; background: #ffffff; border-radius: 10px; display: inline-block;"></div>
+      </div>
     </div>
     <!-- 게임 컨텐츠 element 영역 끝 -->
 
     <!-- 게임 종료 알림 영역 시작 -->
-    <div id="game-end-notice-container" class="game-end-notice float-contents hidden-area">
+    <div id="game-end-notice-container" class="game-end-notice float-contents hidden-area" style="padding: 30px;">
+      <span class="highlight" style="font-size: 30px; font-family: 'EliceDigitalBaeum_Bold';">게임 종료!</span>
       <img id="bomb-image" class="hidden-area" src="{{ url_for('static', filename='images/common/bomb-after.jpg') }}" />
-      게임 종료!
     </div>
     <!-- 게임 종료 알림 영역 끝 -->
 
     <!-- 벌칙 element 영역 시작 -->
     <div id="penalty-container" class="penalty-container float-contents hidden-area">
-      <div class="random-penalty-title">랜덤 벌칙!</div>
+      <div class="random-penalty-title" style="font-size: 30px;"><span class="highlight">랜덤 벌칙!</span></div>
+
       <p id="penalty-title"></p>
       <img class="penalty-image" id="penalty-image" />
       <!-- 벌칙 element 영역 끝 -->
@@ -69,8 +79,7 @@
 
   <!-- Button 영역 -->
   {% block buttons_area %}
-
-  <button class="item btn-them" id="next-game-button">다음 게임</button>
-  <button class="item btn-them" id="extra-penalty-button">벌칙 실행</button>
+    <button class="item btn-them btn-game-1" id="next-game-button">다음 게임</button>
+    <button class="item btn-them btn-game-2" id="extra-penalty-button">벌칙 실행</button>  
   {% endblock buttons_area %}
 </html>

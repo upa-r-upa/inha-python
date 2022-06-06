@@ -11,11 +11,15 @@
   {% extends "base/gameCommon.html" %}
 
   <!-- 게임 컨텐츠 element 영역 시작 -->
-  {% block main_game_area %}
-  <div id="match-keyword-title-1"></div>
-  <p>VS</p>
-  <div id="match-keyword-title-2"></div>
-  <div>거수하기!</div>
-  {% endblock main_game_area %}
+    {% block main_game_area %}
+    <div class="main-game-div" style="font-family: 'MinSans-Medium'; background: #fdeac3; text-align: center; border-radius: 10px; padding: 10px 20px; margin-top: 5px;">
+      <div id="match-keyword-title-1"></div>
+      <p>VS</p>
+      <div id="match-keyword-title-2"></div>
+      <div>거수하기!</div>
+    
+    {% endblock main_game_area %}
+  </div>
+  
   <!-- 게임 컨텐츠 element 영역 끝 -->
 </html>

@@ -1,9 +1,58 @@
+@font-face {
+  font-family: 'GongGothicMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SBAggroM';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroM.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EliceDigitalBaeum_Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+ font-family: 'NanumBarunGothic';
+ font-style: normal;
+ font-weight: 400;
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+
+@font-face {
+ font-family: 'NanumBarunGothic';
+ font-style: normal;
+ font-weight: 700;
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+
+@font-face {
+ font-family: 'NanumBarunGothic';
+ font-style: normal;
+ font-weight: 300;
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+.nanumbarungothic * {
+ font-family: 'NanumBarunGothic', sans-serif;
+}
+
 /* 게임 컨텐츠 내부에서 보여질 element의 부모 역할. */
 .content-container {
   position: relative;
   max-height: calc(100vh - 200px);
   height: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 /* 게임 설명 컨텐츠와 벌칙 컨텐츠는 게임 컨텐츠 위로 float 되어야 하기 때문에 공통적인 CSS로 처리한다. */
@@ -14,8 +63,9 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-  background-color: white;
-  border: 1px solid black;
+  background-color: #ffffff;
+  /* border: 1px solid black; */
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.15), 0px 4px 8px rgba(0,0,0,0.15), 0px 8px 16px rgba(0,0,0,0.15), 0px 16px 32px rgba(0,0,0,0.15);
   overflow: auto;
 }
 
@@ -36,6 +86,7 @@
 /* 게임의 설명 컨텐츠를 그리는 class name */
 .description-container {
   width: 100%;
+  border-radius: 68px;
 }
 
 /* 기본적인 게임 컨텐츠를 그리는 class name */
@@ -53,16 +104,19 @@
 
 #game-title {
   text-align: center;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
+  margin-bottom: 20px;
+  /* font-family: 'GongGothicMedium'; */
+  font-family: 'SBAggroM';
 }
 .description-container,
 .game-end-notice,
 .penalty-container {
-  border-radius: 10px;
+  border-radius: 50px;
   background-color: white;
-  box-shadow: 5px 5px 5px 5px gray;
-  padding: 5px;
+  /* box-shadow: 5px 5px 5px 5px gray; */
+  padding: 20px;
   height: 100%;
   text-align: center;
 }
@@ -73,6 +127,7 @@
   margin: 10px auto;
   font-size: 15px;
   font-weight: bold;
+  font-family: 'EliceDigitalBaeum_Bold';
 }
 .description-container img {
   max-width: 100%;
@@ -97,7 +152,9 @@
 }
 
 .main-container {
-  background-color: beige;
+  /* background-color: beige; */
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 15%), 0px 4px 8px rgb(0 0 0 / 15%), 0px 8px 16px rgb(0 0 0 / 15%), 0px 16px 32px rgb(0 0 0 / 15%);
 }
 
 .main-container {
@@ -105,9 +162,41 @@
 }
 
 #game-description-close {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   height: max-content;
   display: block;
-  margin: auto;
+  /* margin: auto; */
+  margin-left: auto;
   margin-top: 20px;
+  padding: 8px 29px;
+  border-radius: 30px;
+  opacity: 1;
+  background: #fdb137;
+  font-family: 'GongGothicMedium';
+  border: 0;
+
+}
+
+.game-area-title {
+  font-size: 20px; padding: 5px 10px; margin-bottom: 10px; text-align: left;
+}
+
+#match-keyword-title {
+  font-size: 20px; padding: 5px 10px; margin-bottom: 10px; text-align: center;
+  /* background: #f7ece1; */
+  font-family: 'MinSans-Medium'; 
+
+  /* style="font-size: 25px; text-align: center; background: #fdeac3; padding: 8px 20px; border-radius: 230px;" */
+}
+
+#penalty-title {
+  font-family: 'MinSans-Medium'; font-size: 20px; background: #ffe0b2; display: inline-block; padding: 10px 20px; border-radius: 30px;
+}
+
+.game-description-font {
+  text-align: left; font-size: 13px;
+}
+
+.game-des {
+  padding: 15px 10px; background: #f7ece1; border-radius: 10px; word-break: keep-all;
 }
